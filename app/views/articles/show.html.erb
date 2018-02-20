@@ -1,0 +1,23 @@
+<% if !notice.nil? %>
+  <div class="alert alert-info alert-dismissable" id="notice">
+    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+      <span><%= notice %></span>
+    </div>
+<% end %>
+
+
+<h1>
+  <%= @article.title %>
+    <small>
+      <%= link_to "<i class=\"glyphicon glyphicon-pencil\"></i>".html_safe, edit_article_path(@article) %>
+      <%= link_to "<i class=\"glyphicon glyphicon-trash\"></i>".html_safe, article_path(@article),
+          method: :delete,
+          data: { confirm: "Are you sure?" } %>
+    </small>
+</h1>
+<%= @article.content.html_safe %>
+
+
+
+
+
